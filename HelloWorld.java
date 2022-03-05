@@ -404,27 +404,18 @@ public class HelloWorld {
         
         System.out.println(" ");
         //11. Írj lotto programot. A 13+1 tippet 1,2,X eredménnyel add meg. Pl. 1. tipp -> 2, 2. tipp -> X,...
-        int velszam4 = rnd.nextInt(5) + 1;
+        /*int velszam411 = rnd.nextInt(13) + 1;
         int tipp;
         for (int ia411 = 1; ia411 <= 13; ia411++) {
             System.out.println("Add meg a (z)" + ia411 + ". tipped:");
             tipp = scan.nextInt();
-            if (tipp == velszam4) {
+            System.out.println("1. tipp -> " + tipp);
+            if (tipp == velszam411) {
                 System.out.println("Gratulálok kitaláltad a számot!");
                 break;
             }
         }
-        for (int ib411 = 1; ib411 <= 13; ib411++) {
-            System.out.println("Add meg a (z)" + ib411 + ". tipped:");
-            tipp = scan.nextInt();
-            if (tipp != velszam4) {
-                continue;
-            }
-            System.out.println("Gratulálok kitaláltad a számot!");
-            break;
-        }
-        
-        
+        //*/
         //+Harmadik óra
         int ev = 2000;
         int honap = 3;
@@ -459,5 +450,204 @@ public class HelloWorld {
              kszam++;
         }
         System.out.println(kszam);
+        
+        //12. Kérj be 10 számot, majd minden egyes lépésben írd ki az adott szám négyzetét.
+        /*for (int m = 1; m <= 10; m++) {
+            System.out.println("Kérek egy számot");
+            int a412 = scan.nextInt();
+            System.out.println(Math.pow(a412, 2));
+        }
+        //*/
+        //13. Kérj be 10 számot, majd minden egyes lépésben írd ki a szám szinuszát. Vigyázz, a Math.sin() függvény radiánban várja az adatot. A Math.toRadians() függvény a fokban megadott értéket átszámítja radiánba.
+        /*for (int m = 1; m <= 10; m++) {
+            System.out.println("Kérek egy számot");
+            int a413 = scan.nextInt();
+            System.out.println(Math.toRadians(a413));
+            
+        }
+        //*/
+        //14. Egy kockával 10-szer dobunk. Írd ki a kockadobás eredményeit számokkal. A dobások értékeit véletlenszám generálással oldd meg.
+        for (int m = 1; m <= 10; m++) {
+            int a414 = rnd.nextInt(5)+1;
+            System.out.println(a414);
+            
+        }
+        
+        //15. Kérj be egy számot, majd írd ki az osztóit, osztóinak darabszámát! Az osztók darabszáma alapján döntsd el, hogy a szám prímszám-e!
+        /*System.out.println("Kérek egy számot");
+        int a415 = scan.nextInt();
+        int oszt415 = 0;
+        for (int m = 1; m <= a415; m++) {
+            if(m%a415 == 0){
+                oszt415++;
+                System.out.println(m);
+            }
+            
+        }
+        if (oszt415 == 2) {
+            System.out.println("A szám páros");
+            
+        }
+        //*/
+        
+        //16. Kérj be egy számot n, majd írd ki n! értékét.
+        /*System.out.println("kérek egy számot");
+        int a416 = scan.nextInt();
+        int b416 = 1;
+        for (int m = a416; m >= 1; m--) {
+            b416 = b416*a416;
+            a416--;
+        }
+        System.out.println(b416);
+        //*/
+        //17. Kérj be a felhasználótól egy páros számot! A program addig ne menjen tovább, amíg a felhasználó által megadott szám nem páros!
+        /*System.out.println("Kérek egy páros számot");
+        int a417 = scan.nextInt();
+        while(a417%2 != 0){
+            System.out.println("Egy Páros számot kérek");
+            a417 = scan.nextInt();
+        }
+        //*/
+        //18. Állíts elő egy véletlen páros számot a 20 és 80 intervallumban.
+        int a418 = (rnd.nextInt(30)+11)*2;
+        System.out.println(a418);
+        
+        //19. Készíts számkitalálós programot! A program állítson elő egy véletlenszámot, amit a felhasználónak ki kell találnia. A program kérje be a felhasználó tippjeit. Ha a tipp kisebb, mint a program által előállított, akkor a program írja ki, hogy az én számom nagyobb, ha kisebb, akkor azt, hogy az én számom nagyobb. A program a végén írja ki, hogy hány lépésben sikerült kitalálni a számot!
+        /*int a419 = rnd.nextInt(10)+1;
+        System.out.println("Kérek egy számot");
+        int tipp419 = scan.nextInt();
+        int b419 = 1;
+        while(a419 != tipp419){
+            if(tipp419 < a419){
+                System.out.println("A szám nagyobb, adj meg egy újat");
+                tipp419 = scan.nextInt();
+                b419++;
+            } else {
+                System.out.println("A szám kisebb, adj meg egy új számot");
+                tipp419 = scan.nextInt();
+                b419++;
+            }
+        }
+        System.out.println("Gratulálok eltaláltad a számot " + b419 + " lépésből!");
+        //*/
+        //20. Állítsd elő a szorzótáblát táblázatos formában, az alábbi módon. Hogy hányszor hányas szorzótábla legyen, azt a felhasználótól kérd be
+        /*System.out.println("Kérek egy számot"); //Szépség hibás de jó!
+        int a420 = scan.nextInt();
+        for (int m = 0; m <= a420; m++) {
+            System.out.print(m);
+        }
+        System.out.println("");
+        for (int m = 1; m <= a420; m++) {
+            System.out.print(m);
+            for (int n = 1; n <= a420; n++) {
+                System.out.print(m*n);
+            }
+            System.out.println("");
+        }
+        //*/
+        //21. Írd ki a Fibonacci számsort a felhasználótól bekért határig.
+        /*int a421 = 0;
+        int b421 = 1;
+        int c421;
+        System.out.println("Kérek egy számot");
+        int d421 = scan.nextInt();
+        System.out.println(a421);
+        System.out.println(b421);
+        for (int m = 1; m <= d421; m++) {
+            c421 = a421+b421;
+            System.out.println(c421);
+            a421 = b421;
+            b421 = c421;
+            
+        }
+        //*/
+        //22. Kérj be a felhasználótól egy számot, majd írd ki a számnál nagyobb első prímszámot / tökéletes számot.
+        System.out.println("Kérek egy számot:"); // Tökéletes számmal nincs megcsinálva, míg ez a megoldott feladat.
+        int n422 = scan.nextInt();
+        int n4221 = n422; // megjegyezzük, hogy a végén ki tudjuk írni
+        boolean primE;
+        do {
+            primE = true;
+            for (int m = 2; m <= n422 / 2; m++) {
+                if(n422 % m == 0){
+                    primE = false;
+                    n422++;
+                    break;
+                }
+            }            
+        } while (!primE);
+        System.out.println(n4221 + " számhoz jobbról legközelebb eső prímszám : " + n422);
+        
+        //23.  Kérj be a felhasználótól egy számot, majd írd ki a számnál kisebb első prímszámot / tökéletes számot.
+        System.out.println("Kérek egy számot:");
+        int n423 = scan.nextInt();
+        int n4231 = n423; 
+        boolean prime423;
+        do {
+            prime423 = true;
+            for (int m = n423 / 2; m >= 2; m--) {
+                if(n423 % m == 0){
+                    prime423 = false;
+                    n423--;
+                    break;
+                }
+            }            
+        } while (!prime423);
+        System.out.println(n4231 + " számhoz balról legközelebb eső prímszám : " + n423);
+        
+        //24.  Kérj be a felhasználótól egy számot, majd írd ki a számhoz legközelebb álló, kisebb, vagy nagyobb prímszámot / tökéletes számot.
+        System.out.println("Kérek egy számot:"); // Tökéletes számmal nincs megcsinálva, míg ez a megoldott feladat.
+        int n424 = scan.nextInt();
+        int n4241 = n424; // megjegyezzük, hogy a végén ki tudjuk írni
+        int n4242 = n424;
+        boolean prime424;
+        do {
+            prime424 = true;
+            for (int m = 2; m <= n424 / 2; m++) {
+                if(n424 % m == 0){
+                    prime424 = false;
+                    n424++;
+                    break;
+                }
+            }            
+        } while (!prime424);
+        do {
+            prime424 = true;
+            for (int m = n4242 / 2; m >= 2; m--) {
+                if(n4242 % m == 0){
+                    prime424 = false;
+                    n4242--;
+                    break;
+                }
+            }            
+        } while (!prime424);
+        if(n424-n4241 < n4241-n4242){
+            System.out.println(n4241 + " számhoz jobbról legközelebb eső prímszám : " + n424);
+        } else if (n424-n4241 > n4241-n4242) {
+            System.out.println(n4241 + " számhoz balról legközelebbi eső prímszám : " + n4242);
+        } else {
+            System.out.println(n4241 + "számhoz ugyan olyan közel eső prímszámok : " + n4242 + " és " + n424);
+        }
+        
+        //25. Állítsd elő a szinus, cosinus táblázatot a fenti szorzótáblához hasonlóan 0.5-ös lépésközzel.
+        System.out.println("Kérek egy számot");
+        int a425 = scan.nextInt();
+        for (double m = 0; m <= a425; m += 0.5) {
+            System.out.print(m);
+        }
+        System.out.println("");
+        System.out.print("Sin:");
+        for (double m = 1; m <= a425; m += 0.5) {
+            System.out.print(Math.sin(m));
+        }
+        System.out.println("");
+        System.out.print("Cos:");
+        for (double m = 1; m <= a425; m += 0.5) {
+            System.out.print(Math.cos(m));
+        }
+        System.out.println("");
+        
+        //26. Kérj be a felhasználótól 10 db. páros számot! Ha a felhasználó által megadott szám páralan, akkor figyelmeztesd és úrja kérd be a számot. A program írja ki, hogy éppen hányadik szám beolvasásánál tart. Oldd meg a feladatot egy ciklus alkalmazásával is!
+        
     }
 }
