@@ -1,5 +1,6 @@
 package helloworld;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -201,8 +202,8 @@ public class HelloWorld {
         System.out.println(jovoertek112);
         //*/
         //Harmadik óra
-        int j = -5;
-        if (j > 0) { //Debugnál arra a sorra ugrik, amelyik feltétel teljesül.
+        int j3 = -5;
+        if (j3 > 0) { //Debugnál arra a sorra ugrik, amelyik feltétel teljesül.
             System.out.println("A j értéke nagyobb, mint nulla.");
         } else {
             System.out.println("A j értéke egyenlő 0-val, vagy kisebb 0-nál.");
@@ -243,6 +244,39 @@ public class HelloWorld {
         if (!(á >= 5 && á <= 10) && á % 2 != 0) {
             System.out.println(á + "értéke az 5 és 10 intervallum kivülre esik és páratlan");
         }
+                int ev = 2000;
+        int honap = 3;
+        switch (honap) {
+            case 1:
+            case 3:
+            case 5:
+                System.out.println("31");
+                break;
+            case 4:
+            case 6:
+            case 8:
+                System.out.println("30");
+                break;
+            case 2:
+                if ((ev % 4 == 0 && ev % 100 != 0) || ev % 400 == 0) {
+                    System.out.println("29");
+                    break;
+                } else {
+                    System.out.println("28");
+                    break;
+                }
+        }
+        
+        String szoveg = "Egy kis ilyen";
+        int kszam = 0;
+        for (int msz = 0; msz < szoveg.length(); msz++) {
+            System.out.println(szoveg.charAt(msz));
+            if (szoveg.charAt(i) != k){
+                continue;
+            }
+             kszam++;
+        }
+        System.out.println(kszam);
         //1. Oldd meg a következő egyenleteket: Az egyenlet kiszámításához szükséges adatokat a billentyűzetről olvasd be! a5/c+PIa/(b+c) a+b⋅√(b/d) √((sin(n)/b∗c) (a⋅√(b+c))/(c*d)
         /*
         System.out.println("Adj meg egy a értéket");
@@ -455,40 +489,6 @@ public class HelloWorld {
             }
         }
         //*/
-        //+Harmadik óra
-        int ev = 2000;
-        int honap = 3;
-        switch (honap) {
-            case 1:
-            case 3:
-            case 5:
-                System.out.println("31");
-                break;
-            case 4:
-            case 6:
-            case 8:
-                System.out.println("30");
-                break;
-            case 2:
-                if ((ev % 4 == 0 && ev % 100 != 0) || ev % 400 == 0) {
-                    System.out.println("29");
-                    break;
-                } else {
-                    System.out.println("28");
-                    break;
-                }
-        }
-        
-        String szoveg = "Egy kis ilyen";
-        int kszam = 0;
-        for (int msz = 0; msz < szoveg.length(); msz++) {
-            System.out.println(szoveg.charAt(msz));
-            if (szoveg.charAt(i) != k){
-                continue;
-            }
-             kszam++;
-        }
-        System.out.println(kszam);
         
         //12. Kérj be 10 számot, majd minden egyes lépésben írd ki az adott szám négyzetét.
         /*
@@ -725,5 +725,393 @@ public class HelloWorld {
         System.out.println("");
         
         
+        //Ötödik óra
+        int[] nums5 = {0, 2, 4, 6, 8};
+        System.out.println("Elemek: " + Arrays.toString(nums5));
+        
+        int[] szamok5 = new int[15];
+        szamok5[3] = 27; //Ez a negyedik számnak írja, mert 0-val kezdődik.
+        szamok5[szamok5.length - 1] = 27;
+        System.out.println(szamok5);//Tömb referencia azonosítója
+        System.out.println(Arrays.toString(szamok5));
+        
+        int[] szam5 = new int[10];
+        for (int j = 0; j < szam5.length; j++) {
+            szam5[j] = rnd.nextInt(100)+1;    
+        }
+        System.out.println(Arrays.toString(szam5));
+        
+        /*
+        double[] homersekletek = new double[5];
+        for (int j = 0; j < homersekletek.length; j++) {
+            System.out.println("Kérem adja meg " + (j+1) +" hőmérsékletet");
+            homersekletek[j] = scan.nextDouble();
+        }
+        System.out.println(Arrays.toString(homersekletek));
+        //*/
+        
+        int[] szamok5a = new int[10];
+        for (int j = 0; j < szamok5a.length; j++) {
+            szamok5a[j] = rnd.nextInt(100)+1;
+        }
+        System.out.println(Arrays.toString(szamok5a));
+        for (int j = 0; j < szamok5a.length; j++) {
+            if(szamok5a[j] < 50){
+                System.out.print(szamok5a[j] +", ");
+            }
+        }
+        System.out.println("");
+        for (int szam : szamok5a) { //fore -> for each.
+            if(szam % 2 == 0){
+                System.out.print(szam + ", ");
+        }
+        }
+        
+        //1. Hozz létre egy 10 elemű egész számokat tartalmazni képes tömböt, majd írd ki az elemeit vesszővel elválasztva egy sorba! Állítsd át a tömb minden elemét 22-re, majd ismét írd ki!
+        int[] a51 = new int[10];
+        System.out.println(Arrays.toString(a51));// Nem biztos, hogy ezt kérde, de ez is megoldás!!
+        Arrays.fill(a51, 22);
+        System.out.println(Arrays.toString(a51));
+        
+        //2. Tölts fel egy tömböt a természetes számok négyzeteivel 1-től 100-ig! Listázd ki a tömb elemeit!
+        int[] a52 = new int[100];
+        for (int j = 1; j <= a52.length; j++) {
+            a52[j-1] = j*j;
+        }
+        System.out.println(Arrays.toString(a52));
+        
+        //3. Hozz létre egy tömböt, akkora méretűt, amekkorát a felhasználó igényel. Töltsd fel a felhasználótól bekért egész számokkal, majd írd ki a tömböt.
+        /*
+        System.out.println("Kérem a tömb nagyságát: ");
+        int a53 = scan.nextInt();
+        int[] b53 = new int[a53];
+        System.out.println("Kérem az elemeit: ");
+        for (int j = 0; j < b53.length; j++) {
+            b53[j]= scan.nextInt();
+        }
+        System.out.println(Arrays.toString(b53));
+        //*/
+        //4. Kérdezd meg a felhasználótól, hogy milyen típusú adatot szeretne tárolni! (egész számokat, valós számokat, vagy szövegeket)! Kérdezd meg, hogy hány ilyen adatot kíván tárolni, majd kérd be tőle az adatokat és írd ki egymás alá!
+        /*
+        System.out.println("Vállasszon egy számot milyen adatokat akar eltárolni: 1 : egész szám; 2 : valós szám; 3 : szövegek");
+        int a54 = scan.nextInt();
+        while(a54 != 1 && a54 != 2 && a54 != 3){
+            System.out.println("A megkapott érték nem megfelelő! Vállasszon egy számot milyen adatokat akar eltárolni: 1 : egész szám; 2 : valós szám; 3 : szövegek");
+            a54 = scan.nextInt();            
+        }
+        if(a54 == 1) { //Ugyan ezt megoldani Switch és Case-ekben!!
+            System.out.println("Mennyi adatok akar eltárolni?");
+            int b54 = scan.nextInt();
+            int[] c54 = new int[b54];
+            for (int j = 0; j < c54.length; j++) {
+                System.out.println("Kérem az következő adatot");
+                c54[j] = scan.nextInt();
+            }
+            for (int j = 0; j < c54.length; j++) {
+                System.out.println(c54[j]);
+            }
+        }else if (a54 == 2) {
+            System.out.println("Mennyi adatok akar eltárolni?");
+            int b54 = scan.nextInt();
+            double[] c54 = new double[b54];
+            for (int j = 0; j < c54.length; j++) {
+                System.out.println("Kérem az következő adatot");
+                c54[j] = scan.nextDouble();                
+            }
+            for (int j = 0; j < c54.length; j++) {
+                System.out.println(c54[j]);
+            }            
+        }else if (a54 == 3) {
+            System.out.println("Mennyi adatok akar eltárolni?");
+            int b54 = scan.nextInt();
+            String[] c54 = new String[b54];
+            for (int j = 0; j < c54.length; j++) {
+                System.out.println("Kérem a következő adatot");
+                c54[j] = scan.next();
+            }
+            for (int j = 0; j < c54.length; j++) {
+                System.out.println(c54[j]);
+            }
+        }
+        //*/
+        //5. Állíts elő egy 10 elemű tömböt, amely egész számokat tartalmazhat!
+        int a55[] = new int[10];
+        //a. Töltsd fel az 50..100 közötti intervallumból véletlenszámokkal! 
+        for (int j = 0; j < a55.length; j++) {
+            a55[j] = rnd.nextInt(50)+51;
+        }
+        //b. Írd ki a tömb elemeit vesszővel elválasztva egy sorba!
+        for (int j = 0; j < a55.length; j++) {
+            System.out.print(a55[j] + ", ");
+        }
+        System.out.println("");
+        //c. Írd ki a tömböt azon a módon, ahogy az Arrays.toString() metódus teszi. Pl. [54, 23, 45, 7, 8, 46, 81, 9, 10]
+        System.out.println(Arrays.toString(a55));
+        //d. Írd ki a tömböt visszafelé.
+        for (int j = a55.length-1; j >= 0; j--) {
+            System.out.print(a55[j] + ", ");
+        }
+        System.out.println("");
+        //e. Írd ki a tömböt a következőképpen: Az [1] és [10], a [2] és [9],.., végül az [5] és a [6] elemek különbségét.
+        for (int j = 0; j < a55.length/2; j++) {
+            System.out.println(a55[j] - a55[9-j]);
+        }
+        //f. Írd ki a tömb egymás melletti elemeinek különbségét.
+        for (int j = 0; j < a55.length-1; j++) {
+            System.out.println(a55[j]-a55[j+1]);
+        }
+        //g. Írd ki a tömbben található páros/páratlan számokat, az 50-nél kisebb, vagy 70-nél nagyobb számokat.
+        for (int j = 0; j < a55.length; j++) {
+            if(a55[j] % 2 == 0){
+                System.out.println(a55[j] + " páros szám");
+            }else{
+                System.out.println(a55[j] + " páratlan");
+            }
+            if(a55[j] > 70){
+                System.out.println(a55[j] + " 70-nél nagyobb szám");
+            }   
+        }
+        //6. Hozz létre egy igaz-hamis értékeket tárolni képes 15 elemű tömböt. Töltsd fel véletlen logikai értékekkel. (rnd.nextBoolean() függvény használatával). Listázd ki a tömböt a következőképpen:1. Sikeres vizsga (ha true az érték)2. Sikertelen vizsga (ha false az érték)
+        boolean[] a56 = new boolean[15];
+        for (int j = 0; j < a56.length; j++) {
+            a56[j] = rnd.nextBoolean();
+            if(a56[j] == true){
+                System.out.println(a56[j] + " sikeres vizsga");
+            }else{
+                System.out.println(a56[j] + " sikertelen vizsga");
+            }
+        }
+        //7. Hozz létre egy hónapneveket tartalmazó tömböt, a tömb értékeit a létrehozáskor inicializáld! Írd ki az alábbiak szerint a tartalmát: 1. hónap: január 2. hónap: február 3. …
+        String[] a57 = {"január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"};
+        int co57 = 1;
+        for (int j = 0; j < a57.length; j++) {
+            System.out.println(co57 + ". hónap: " + a57[j]);
+            co57++;
+        }
+        /*
+        //8. Készíts tömböt, amely 5 sztringet tartalmazhat!
+        String[] a58 = new String[5];
+        //a. Kérj be a felhasználótól 5 nevet!
+        for (int j = 0; j < a58.length; j++) {
+            System.out.println("Kérem a nevet: ");
+            a58[j] = scan.next();
+        }
+        //b. Rendezd a tömböt az Arrays.sort() metódussal! 
+        Arrays.sort(a58);
+        //c. Írd ki a neveket nagybetűs formátumban!
+        System.out.println(Arrays.toString(a58).toUpperCase());
+        //d. Írd ki a nevek hosszát! Pl. 1. Pisti -> 5 2. Lali -> 4
+        for (int j = 0; j < a58.length; j++) {
+            System.out.println(a58[j] + " -> " + a58[j].length());
+        }
+        //e. Döntsd el, hogy egy adott név szerepel-e a tömbben! Használd az Arrays.binarySearch() metódust a feladat megoldására!
+        System.out.println("írj be egy nevet, hogy szerepel-e");
+        String b58 = scan.next();
+        if(Arrays.binarySearch(a58, b58) > 0){
+            System.out.println("A név szerepel");
+        } else {
+            System.out.println("A név nem szerepel");
+        }
+        //*/
+        //9. Készíts két tömböt, töltsd fel őket létrehozáskor kezdőértékekkel. Döntsd el, hogy a tömbök egyenlők-e, azaz elemeik rendről –rendre megegyeznek-e! Használd az Arrays.equals() metódust a feladat elvégzésére.
+        int[] a59 = {3, 2, 1};
+        int[] b59 = {1, 2, 3};
+        System.out.println(Arrays.equals(a59, b59));
+        
+        //10. Hozz létre egy 10 elemű, egész számokat tartalmazó tömböt, majd töltsd fel véletlenszámokkal az 1 és 20 intervallumban!
+        /*
+        int[] a510 = new int[10];
+        for (int j = 0; j < a510.length; j++) {
+            a510[j] = rnd.nextInt(19)+1;
+        }
+        //a. Írd ki a tömb elemeit egy sorba, egymástól vesszővel elválasztva!
+        System.out.println(Arrays.toString(a510));
+        //b. Kérj be a felhasználótól egy számot és mondd meg, hogy az adott szám melyik indexen- (indexeken, ha ismétlődő) helyezkedik el. Ha nincs ilyen szám a tömbben, akkor jelezd.
+        System.out.println("Kérek egy számot 1 és 20 között");
+        int b510 = scan.nextInt();
+        int co510 = 0;
+        for (int j = 0; j < a510.length; j++) {
+            if(a510[j] == b510){
+                System.out.println(j+1);
+                co510++;
+            }
+        }
+        if(co510 == 0){
+            System.out.println("A szám nem szerepel");
+        }
+        //*/
+        //11. Állíts elő egy 10 elemű tömböt, amely egész számokat tartalmazhat!
+        /*
+        int[] a511 = new int[10];
+        //c. Töltsd fel a felhasználótól bekért számokkal a tömböt! 
+        for (int j = 0; j < a511.length; j++) {
+            System.out.println("Kérek egy számot");
+            a511[j] = scan.nextInt();
+        }
+        System.out.println(Arrays.toString(a511));
+        
+        //d. Töltsd fel a felhasználótól bekért páros számokkal a tömböt. A nem páros számokat ne fogadja el a program, azonban mind a 10 szám legyen meg a bekérés végén!
+        int[] b511 = new int[10];
+        int co511 = 0;
+        int c511;
+        do {
+            System.out.println("Kérek egy számot");
+            c511 = scan.nextInt();
+            if(c511%2 == 0){
+                b511[co511] = c511;
+                co511++;
+            }else{
+                System.out.println("A szám nem páros!");
+            }
+        } while (co511 != 10);
+        System.out.println(Arrays.toString(b511));
+        //*/
+        //12. Egy 5 elemű tömbben az értékek 1 és 5 közötti véletlenszámok. Készítshisztogramot: jeleníts meg annyi csillagot, amekkorák az egyes értékek a tömbben. Pl. [4, 3, 5, 2, 1] **** *** ***** ** *
+        int[] a512 = new int[5];
+        for (int j = 0; j < a512.length; j++) {
+            a512[j] = rnd.nextInt(4)+1;
+            for (int m = 1; m <= a512[j]; m++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        //13. Véletlenszerűen dobjunk 100-szor egy szabályos kockával, majd írd ki, hogy hányszor dobtunk 1-est, 2-est stb.! A kockadobásokat egy 6 elemű tömbben számláld!
+        int[] a513 = new int[100]; //valószínűleg nem így!!
+        for (int j = 0; j < a513.length; j++) {
+            a513[j] = rnd.nextInt(5)+1;
+        }
+        int co5131 = 0;
+        int co5132 = 0;
+        int co5133 = 0;
+        int co5134 = 0;
+        int co5135 = 0;
+        int co5136 = 0;
+        for (int j = 0; j < a513.length; j++) {
+            if(a513[j] == 1){
+                co5131++;
+            }else if(a513[j] == 2){
+                co5132++;
+            }else if(a513[j] == 3){
+                co5133++;
+            }else if(a513[j] == 4){
+                co5134++;
+            }else if(a513[j] == 5){
+                co5135++;
+            }else{
+                co5136++;
+            }
+        }
+        int[] b513 ={co5131, co5132, co5133, co5134, co5135, co5136};
+        System.out.println(Arrays.toString(b513));
+        
+        //14. Hozz létre egy tömböt, amit létrehozáskor valós számokkal töltesz fel. Döntsd el, hogy a tömb növekvően rendezett-e. A program írja ki, hogy a tömb rendezett, vagy nem rendezett.
+        double[] a514 = {0.1, 1.1, 2.3}; 
+        boolean boo514 = false;
+        int co514 = 0;
+        for (int j = 0; j < a514.length-1; j++) {
+            if(a514[j] < a514[j+1]){
+                co514++;
+            }  
+        }
+        if(co514 == 2){
+            boo514 = true;
+        }
+        if(boo514){
+            System.out.println("A tömb rendezett");
+        }else{
+            System.out.println("A tömb nem rendezett");
+        }
+        //15. Hozz létre két 10 elemű egész számokat tartalmazni képes tömböt A és B tömb. Az egyiket A töltsd fel 0-9- intervallumban véletlenszámokkal, a másikat B 1-100 közötti véletlenszámokkal. Írd ki a B tömb elemeit az A tömbben létrehozott számok sorrendjében! Tehát, ha az A-ban pl. 2,5,8.. van, akkor a B tömb 2., 5., és 8… elemeit írd ki egymás után
+        int[] a515 = new int[10];
+        int[] b515 = new int[10];
+        for (int j = 0; j < a515.length; j++) {
+            a515[j] = rnd.nextInt(10);
+        }
+        for (int j = 0; j < b515.length; j++) {
+            b515[j] = rnd.nextInt(99)+1;
+        }
+        for (int j = 0; j < b515.length; j++) {
+            System.out.println(b515[a515[j]]);
+        }
+        
+        //16. Tölts fel egy 20 elemű tömböt véletlenszámokkal a 10 és 30 intervallumban.
+        int[] a516 = new int[20];
+        for (int j = 0; j < a516.length; j++) {
+            a516[j] = rnd.nextInt(20)+11;
+        }
+        //e. Határozd meg, hogy van –e olyan számpár a tömbben, ami a 42-őt adja eredményül. Ha igen, írd ki ezt a számpárt, majd állítsd le a programot.Megengedett, hogy egy tömbbéli elem adja ki a számot. Pl. 21.
+        int b516;
+        for (int j = 0; j < a516.length; j++) {
+            for (int m = 0; m < a516.length; m++) {
+                b516 = a516[j] + a516[m];
+                if(b516 == 42){
+                    System.out.println("Az " + j + ". és a " + m + ".");
+                }
+            }
+        }
+        //17. Tölts fel egy 10 elemű egész számokat tartalmazó tömböt kezdőértékekkel. Egy másik, 3 elemű tömböt is tölts fel a felhasználótól bekért egész számokkal. Döntsd el, hogy a bekért számok szekvenciája megtalálható-e a tömbben!
+        /*
+        int[] a517 ={0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] b517 = new int[3];
+        for (int j = 0; j < b517.length; j++) {
+            System.out.println("Kérek egy számot");
+            b517[j] = scan.nextInt();
+        }
+        boolean boo517 = false;
+        for (int j = 0; j < a517.length-2; j++) {
+            int[] c517 = {a517[j], a517[j+1], a517[j+2]};
+            if(Arrays.equals(b517, c517)){
+                boo517 = true;
+            }
+        }
+        if(boo517){
+            System.out.println("A sor metalálható");
+        }else{
+            System.out.println("A sor nem található meg");
+        }
+        //*/
+        //18. Cseréld meg egy tömb két elemét! Hogy melyik két elemet cserélje fel, azt a felhasználótól kérd be!
+        int[] a518 = {1, 2, 3, 4, 5};
+        int b518 = a518[4];
+        a518[4] = a518[2];
+        a518[2] = b518;
+        System.out.println(Arrays.toString(a518));
+        //19. Cseréld fel egy tömb egymás mellett lévő elemeit a következőképpen. 1-2, 3-4, 4-5…9-10 elemeket.
+        int[] a519 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int b519;
+        for (int j = 0; j < a519.length; j+=2) {
+            b519 = a519[j];
+            a519[j] = a519[j+1];
+            a519[j+1] = b519;
+        }
+        System.out.println(Arrays.toString(a519));
+        //20. Tölts fel egy tömböt 5 véletlenszámmal. Cseréld fel két véletlenszerűen kiválasztott elemét! Ezt addig ismételd, ameddig a tömb rendezett nem lesz.
+        int[] a520 = new int[5];
+        for (int j = 0; j < a520.length; j++) {
+            a520[j] = rnd.nextInt(5);
+        }
+        System.out.println(Arrays.toString(a520));
+        int b520;
+        int rn520;
+        int ra520;
+        int co520;
+        boolean boo520 = true;
+        do {
+            co520 = 0;
+            rn520 = rnd.nextInt(5);
+            ra520 =rnd.nextInt(5);
+            b520 = a520[rn520];
+            a520[rn520] = a520[ra520];
+            for (int j = 0; j < a520.length-1; j++) {
+                if(a520[j]<a520[j+1] || a520[j]==a520[j+1]){
+                    co520++;
+                }
+                
+            }
+            if(co520 == 4){
+                boo520 = false;
+            }
+        } while (boo520);
+        System.out.println(Arrays.toString(a520));
     }
 }
