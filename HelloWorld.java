@@ -244,7 +244,7 @@ public class HelloWorld {
         if (!(á >= 5 && á <= 10) && á % 2 != 0) {
             System.out.println(á + "értéke az 5 és 10 intervallum kivülre esik és páratlan");
         }
-                int ev = 2000;
+        int ev = 2000;
         int honap = 3;
         switch (honap) {
             case 1:
@@ -271,10 +271,10 @@ public class HelloWorld {
         int kszam = 0;
         for (int msz = 0; msz < szoveg.length(); msz++) {
             System.out.println(szoveg.charAt(msz));
-            if (szoveg.charAt(i) != k){
+            if (szoveg.charAt(msz) != 'k'){
                 continue;
             }
-             kszam++;
+            kszam++;
         }
         System.out.println(kszam);
         //1. Oldd meg a következő egyenleteket: Az egyenlet kiszámításához szükséges adatokat a billentyűzetről olvasd be! a5/c+PIa/(b+c) a+b⋅√(b/d) √((sin(n)/b∗c) (a⋅√(b+c))/(c*d)
