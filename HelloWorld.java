@@ -5,6 +5,48 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HelloWorld {
+    
+    //Hatodik óra
+    public static void kiirValamit() {
+        System.out.println("*");
+    }
+    public static void kiirSzoveg(String szoveg, int db){
+        for (int i = 0; i <= db; i++) {
+            System.out.print(szoveg);
+        }
+        System.out.println("");
+    }
+    public static void kiirSzoveg(String szoveg, int db, int mod){ //Metódus túlterhelés
+        for (int i = 0; i <= db; i++) {
+            if(mod == 1){
+                System.out.print(szoveg + ", ");
+            }else if (mod == 2){
+                System.out.print(szoveg.toLowerCase() + ", ");
+            }else if (mod == 3){
+                System.out.print(szoveg.toUpperCase() + ", ");
+            }
+        }
+        System.out.println("");
+    }
+    public static int szamol(int a6, int b6){
+        return (a6 + b6);
+    }
+    public static double meredekség(double x16, double y16, double x26, double y26){
+        double dy6 = y26 - y16;
+        double dx6 = x26 - x16;
+        return dy6 / dx6;
+    }
+    public static boolean primszamE(int N){
+        if (N == 0 || N == 1) {
+            return false; //Bármelyik return érték után visszetér a hívó metódusra. (Ez esetben a main-re)
+        }
+        for (int i = 2; i <= Math.sqrt(N); i++) {
+            if (N % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         //Első óra
@@ -1102,6 +1144,7 @@ public class HelloWorld {
             ra520 =rnd.nextInt(5);
             b520 = a520[rn520];
             a520[rn520] = a520[ra520];
+            a520[ra520] = b520;
             for (int j = 0; j < a520.length-1; j++) {
                 if(a520[j]<a520[j+1] || a520[j]==a520[j+1]){
                     co520++;
@@ -1113,5 +1156,28 @@ public class HelloWorld {
             }
         } while (boo520);
         System.out.println(Arrays.toString(a520));
+        
+        
+        //Hatodik óra
+        kiirValamit(); //ctrl+space=Előhívás //Debugolásnál a step over (F8) itt a mainben megy a következőre, míg a step into (F7) bele is megy a kiirVaalmit-be
+        kiirValamit();
+        
+        kiirSzoveg("*", 10);
+        kiirSzoveg("Metodus", 15, 2);
+        kiirSzoveg("Java", 4, 3);
+        
+        int x6 = szamol(5, 12);
+        System.out.println(x6);
+        int y6 = x6 + szamol(8, 13);
+        System.out.println(y6);
+        
+        double m6 = meredekség(-1, 0, 2, 2);
+        System.out.println("Meredekség " + m6);
+        
+        System.out.println(primszamE(1));
+        System.out.println(primszamE(23));
+        System.out.println(primszamE(24));
+        
+        
     }
 }
