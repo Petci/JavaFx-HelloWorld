@@ -47,7 +47,96 @@ public class HelloWorld {
         }
         return true;
     }
-
+    
+    //1. Készíts programot, amely bekér a felhasználótól egy egész számot, és kiírja annak kétszeresét! A számot a program main() metódusában kérd be, a számítást a dupla() nevű metódus végezze!
+    public static double szamitas61(double a61){
+        return a61*2;
+    }
+    
+    //2. Készíts programot, amely bekér a felhasználótól két számot, és kiírja a közöttük levő egész számokat! A bekérést a main() metódus végezze, a két szám közti egész számok kiírását az eljárás! Az eljárás kezelje le, ha nem az elsőnek megadott szám nagyobb, mint a másodikként megadott szám!
+    public static void kiir62(int a62, int b62) {
+        if(a62 >= b62){
+            System.out.print("Az első szám nagyobb, mint az második");
+        }else{
+            for (int i = a62; i < b62; i++) {
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.println("");
+    }
+    
+    //3. Készíts metódust tömbKiír() néven, amely egy átadott tömböt kilistáz a konzolra!
+    public static void tömbKiir63(){ //Mi az, hogy átadott tömb?!!
+        int[] a63 = {2, 3}; //Mi az, hogy átadott tömb?!!
+        System.out.println(a63); //Mi az, hogy átadott tömb?!!
+    } //Mi az, hogy átadott tömb?!!
+    
+    //4. Készíts statikus metódust, amely a main()metódus által beolvasott és átadott sztring hosszát, nagybetűs, kisbetűs változatát kiírja a konzolra! Ha a sztring üres, írja ki, hogy a művelet értelmetlen!
+    public static void kiirszoveg64(String szoveg){
+        if(szoveg.length() == 0){
+            System.out.println("A művelet értelmetlen");
+        }else{
+        System.out.println(szoveg.length());
+        System.out.println(szoveg.toLowerCase());
+        System.out.println(szoveg.toUpperCase());
+        }
+    }
+    
+    //5. Készíts metódust, ami 1..n-ig megadja a számok összegét az n*(n+1)/2 képlettel!
+    public static int osszeg65(int a65){
+        return a65*(a65+1)/2;
+    }
+    
+    //6. Készíts metódust, ami kiszámolja a kamatos kamat értékét! A bemenő paraméterek int típusúak, a visszatérési érték double típusú legyen! Ellenőrizd a számítások eredményét manuálisan is!
+    public static double kamat66(int a66, int b66, int c66){
+        return (a66 * Math.pow(1 + b66 / 100.0, c66));
+    }
+    
+    //7. Készíts metódust, ami kiszámolja a másodfokú egyenlet megoldóképlete által megadott értékeket! A függvények nevei legyenek gyok1 és gyok2, bemenő paraméterei és a visszatérési érték double típusú legyen!
+    public static double gyok167(double a67, double b67, double c67){
+        return (-b67+Math.sqrt((b67*b67)-4*a67*c67))/2*a67;
+    }
+    public static double gyok267(double a67, double b67, double c67){
+        return (-b67-Math.sqrt((b67*b67)-4*a67*c67))/2*a67;
+    }
+    
+    //8. Készíts metódust, ami az átadott Fahrenheit értéket Celsius értékké konvertálja! Készítsd el a Celsiusról Fahrenheit értékké konvertáló metódust is!
+    public static double FtC68(double f68){
+        return (f68 - 32) / 1.8;
+    }
+    public static double CtF68(double c68){
+        return c68*1.8+32;
+    }
+    
+    //9. Készíts az előző példa alapján oda-vissza konvertáló metódusokat brit mértékegységszerinti távolság, súly, sebesség, űrtartalom átváltására nemzetközi SI mértékegységekre!
+    public static double TtSI69(double a69, double b69, double c69, double d69){
+        return a69*1.609*1000*100+b69*0.914*100+c69*30.48+d69*2.54;
+    }
+    public static void SItT69(double cm69){
+        int ml69 = 0;
+        int yd69 = 0;
+        int f69 = 0;
+        double i69 = 0;
+        
+        do {
+        if(cm69 >= 160900){
+            cm69 = cm69/160900;
+            ml69++;
+        }else if(160900 >= cm69 && cm69 >= 91.4){
+            cm69 = cm69/91.4;
+            yd69++;
+        }else if(91.4 > cm69 && cm69 >= 30.48){
+            cm69 = cm69/2.54;
+            f69++;
+        }else if(30.48 > cm69 && cm69 > 0){
+            i69 = cm69/2.54;
+            cm69=0;
+        }
+        } while (cm69 != 0);
+        System.out.println(ml69 + "ml " + yd69 + "yd " + f69 + "' " + i69 + "''");
+    }
+    
+    
     public static void main(String[] args) {
         //Első óra
         //1. Írd ki a konzolra egy sorba a „Hello Világ!” szöveget!
@@ -1178,6 +1267,49 @@ public class HelloWorld {
         System.out.println(primszamE(23));
         System.out.println(primszamE(24));
         
+        //1. Készíts programot, amely bekér a felhasználótól egy egész számot, és kiírja annak kétszeresét! A számot a program main() metódusában kérd be, a számítást a dupla() nevű metódus végezze!
+        System.out.println("Kérek egy számot");
+        System.out.println(szamitas61(scan.nextDouble()));
+        
+        //2. Készíts programot, amely bekér a felhasználótól két számot, és kiírja a közöttük levő egész számokat! A bekérést a main() metódus végezze, a két szám közti egész számok kiírását az eljárás! Az eljárás kezelje le, ha nem az elsőnek megadott szám nagyobb, mint a másodikként megadott szám!
+        System.out.println("Kérek két számot");
+        kiir62(scan.nextInt(), scan.nextInt());
+        
+        //3. Készíts metódust tömbKiír() néven, amely egy átadott tömböt kilistáz a konzolra!
+        int[] a63 = {2, 3}; //Mi az, hogy átadott tömb?!!
+        tömbKiir63(); //Mi az, hogy átadott tömb?!!
+        
+        //4. Készíts statikus metódust, amely a main()metódus által beolvasott és átadott sztring hosszát, nagybetűs, kisbetűs változatát kiírja a konzolra! Ha a sztring üres, írja ki, hogy a művelet értelmetlen!
+        System.out.println("Kérek egy szöveget"); //Rossz!!
+        kiirszoveg64(scan.next());
+        
+        //5. Készíts metódust, ami 1..n-ig megadja a számok összegét az n*(n+1)/2 képlettel!
+        System.out.println("Kérek egy számot");
+        System.out.println(osszeg65(scan.nextInt()));
+        
+        //6. Készíts metódust, ami kiszámolja a kamatos kamat értékét! A bemenő paraméterek int típusúak, a visszatérési érték double típusú legyen! Ellenőrizd a számítások eredményét manuálisan is!
+        System.out.println("Kérem a kezdőtőke, kamatláb, és a futamidő évekbeli értékét");
+        System.out.println(kamat66(scan.nextInt(), scan.nextInt(), scan.nextInt()));
+        
+        //7. Készíts metódust, ami kiszámolja a másodfokú egyenlet megoldóképlete által megadott értékeket! A függvények nevei legyenek gyok1 és gyok2, bemenő paraméterei és a visszatérési érték double típusú legyen!
+        System.out.println("A másodfokú egyenlet általános képlete: a * x*x + b * x + c");
+        System.out.println("Add meg az a, b, és c értékét");
+        double a67 = scan.nextDouble();
+        double b67 = scan.nextDouble();
+        double c67 = scan.nextDouble();
+        System.out.println("A gyökei: " + gyok167(a67, b67, c67) + " " + gyok267(a67, b67, c67));
+        
+        //8. Készíts metódust, ami az átadott Fahrenheit értéket Celsius értékké konvertálja! Készítsd el a Celsiusról Fahrenheit értékké konvertáló metódust is!
+        System.out.println("Kérek egy értéket Fahrenheitben");
+        System.out.println("Az érték Celsiusban: "+FtC68(scan.nextDouble()));
+        System.out.println("Kérek egy értéket Celsiusban");
+        System.out.println("Az érték Fahrenheitben" + CtF68(scan.nextDouble()));
+        
+        //9. Készíts az előző példa alapján oda-vissza konvertáló metódusokat brit mértékegységszerinti távolság, súly, sebesség, űrtartalom átváltására nemzetközi SI mértékegységekre!
+        System.out.println("Kérem adja meg a hosszt (a ml, b yd, c', d'')");
+        System.out.println(TtSI69(scan.nextDouble(), scan.nextDouble(), scan.nextDouble(), scan.nextDouble())+"cm");
+        System.out.println("Kérem adja meg a hosszt cm-ben");
+        SItT69(scan.nextDouble());
         
     }
 }
