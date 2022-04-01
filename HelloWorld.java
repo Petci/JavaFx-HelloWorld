@@ -471,10 +471,10 @@ public class HelloWorld {
         System.out.println("2 * 9 + 2 * 3 % 2 = " + (2 * 9 + 2 * 3 % 2));
         System.out.println("2 * 9 + (3 + 2) / 2 = " + (2 * 9 + (3 + 2) / 2));
         //4. Add meg a változók értékeit: a=9, b=2, d=2,5; Írasd ki a következő képletet és az értékét: z=a*b+a/b+(a+3)
-        int i = 9;
+        int i1e = 9;
         int o = 2;
         double ő = 2.5;
-        System.out.println(i * o + i / o + ((i + 3)));
+        System.out.println(i1e * o + i1e / o + ((i1e + 3)));
         //5. Hozz létre egy egyész típusú változót BruttoAr néven és egy valós típusú változót AFA néven. Add meg a kezdőértékeket. Számold ki a nettó árat és írd ki a konzolra.
         /*
         System.out.println("Add meg a Bruttó Árat.");
@@ -743,6 +743,139 @@ public class HelloWorld {
             System.out.println("Gratulálok kitaláltad a számot!");
             break;
         }
+        //*/
+        
+        //Negyedik gyakorlati óra
+        
+        /*
+        int a5gy = 12;
+        float b5gy = 13.5f;
+        char c5gy = 'a';
+        String d5gy = "alma";
+        boolean x5gy = true;
+        
+        for (int i = 0; i <= 40; i++) {
+            if (i % 3 == 0){
+                System.out.println(i);
+            }else {
+                System.out.println("mimo");
+            }
+            
+        }
+        
+        int i = 0;
+        while (i <=4){
+            if (i % 3 == 0){
+                System.out.println(i);
+            }else {
+                System.out.println("mimo");
+            }
+            i++;
+        }
+        
+        
+        int num1 = 0;
+        int num2 = 1;
+        
+        int num3 = 1;
+        
+        //num3 = num2 + num1;
+        
+        System.out.println(num1);
+        System.out.println(num2);
+        for (int j = 0; j <= 20; j++) {
+            num1 = num1 + num2;
+            System.out.println(num1);
+            num2 = num1 + num2;
+            System.out.println(num2);
+            
+        }
+        
+        num1 = 0;
+        num2 = 1;
+        num3 = 1;
+        System.out.println(num1);
+        System.out.println(num2);        
+        for (int j = 0; j <= 40; j++) {
+            num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+            System.out.println(num3);
+            
+        }
+        num1 = 0;
+        num2 = 1;
+        num3 = 1;
+        System.out.println(num1);
+        System.out.println(num2);
+        int a1= 10;
+        for (int j = 0; j <= a1; j++) {
+            num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+            System.out.println(num3);
+            
+        }
+        
+        
+        int pr = scan.nextInt();
+        int co = 0;
+        for (int j = 1; j <= pr; j++) {
+            if (pr%j == 0) {
+                co++;
+                System.out.println(j);
+            }
+            
+        }
+        if (co == 2){
+            System.out.println(pr + " prímszám");
+        }
+        boolean prime5gy;
+        int prim5gy =1;
+        int primTotal5gy = 0;
+        while (primTotal5gy <= 100){
+        prime5gy = true;
+            for (int j = 2; j <= prim5gy/2; j++) {
+                if (prim5gy % 1 == 0){
+                     prime5gy = false;
+                }
+            }
+         if(prime5gy) {
+             primTotal5gy++;
+                System.out.println(prim5gy);
+         }
+         prim5gy++;
+        }
+        int a4 = 6556;
+        int b4 = 0;
+        int c4 = a4;
+        while( a4 != 0){
+            b4 = b4 * 10 + (a4%10);
+            a4=a4/10;
+        }
+        if(c4 == b4){
+            System.out.println("palindrom");
+        }else{
+            System.out.println("nem");
+        }
+        int x = 5, n=2;
+        if (x >= n)
+            System.out.println(x+">="+n);
+        else
+           System.out.println(x+"<"+n);
+
+        int jegy= 3;
+        if (jegy>= 5)
+            System.out.println("Jeles");      
+        if (jegy>= 4)
+            System.out.println("Jó");      
+        if (jegy>= 3)
+            System.out.println("Közepes");      
+        if (jegy>= 2)
+            System.out.println("Elégséges");      
+        if (jegy>=1)
+            System.out.println("Elégtelen");
+        
         //*/
         //1. Írd ki a számokat 1 -től 10 -ig egyesével.
         for (int a41 = 1; a41 <= 10; a41++) {
@@ -1123,6 +1256,33 @@ public class HelloWorld {
                 System.out.print(szam + ", ");
         }
         }
+        
+        //Ötödik gyak óra
+         int x = 34;
+        int[] array = {4, 7, 6, 4, 8, 2, 9, 6, 4 , 1, 2, 3, 4, 5, 6, 7, 8};
+        //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int number;        
+        boolean checked = true; 
+        int count = 0;
+        int total = array.length-1;
+
+        while (checked) {
+            checked = false;
+            for (int i = 0; i < total; i++) {
+                count++;
+                if (array[i] > array[i + 1]) {
+                    number = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = number;
+                    checked = true;
+                }
+            }
+            total--;
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+        System.out.println(count);
         
         //1. Hozz létre egy 10 elemű egész számokat tartalmazni képes tömböt, majd írd ki az elemeit vesszővel elválasztva egy sorba! Állítsd át a tömb minden elemét 22-re, majd ismét írd ki!
         int[] a51 = new int[10];
