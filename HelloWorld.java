@@ -5,38 +5,43 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HelloWorld {
-    
+
     //Hatodik óra
     public static void kiirValamit() {
         System.out.println("*");
     }
-    public static void kiirSzoveg(String szoveg, int db){
+
+    public static void kiirSzoveg(String szoveg, int db) {
         for (int i = 0; i <= db; i++) {
             System.out.print(szoveg);
         }
         System.out.println("");
     }
-    public static void kiirSzoveg(String szoveg, int db, int mod){ //Metódus túlterhelés
+
+    public static void kiirSzoveg(String szoveg, int db, int mod) { //Metódus túlterhelés
         for (int i = 0; i <= db; i++) {
-            if(mod == 1){
+            if (mod == 1) {
                 System.out.print(szoveg + ", ");
-            }else if (mod == 2){
+            } else if (mod == 2) {
                 System.out.print(szoveg.toLowerCase() + ", ");
-            }else if (mod == 3){
+            } else if (mod == 3) {
                 System.out.print(szoveg.toUpperCase() + ", ");
             }
         }
         System.out.println("");
     }
-    public static int szamol(int a6, int b6){
+
+    public static int szamol(int a6, int b6) {
         return (a6 + b6);
     }
-    public static double meredekség(double x16, double y16, double x26, double y26){
+
+    public static double meredekség(double x16, double y16, double x26, double y26) {
         double dy6 = y26 - y16;
         double dx6 = x26 - x16;
         return dy6 / dx6;
     }
-    public static boolean primszamE(int N){
+
+    public static boolean primszamE(int N) {
         if (N == 0 || N == 1) {
             return false; //Bármelyik return érték után visszetér a hívó metódusra. (Ez esetben a main-re)
         }
@@ -47,7 +52,7 @@ public class HelloWorld {
         }
         return true;
     }
-    
+
     //1. Készíts programot, amely bekér a felhasználótól egy egész számot, és kiírja annak kétszeresét! A számot a program main() metódusában kérd be, a számítást a dupla() nevű metódus végezze!
     /*
     public static double szamitas61(double a61){
@@ -68,11 +73,10 @@ public class HelloWorld {
     }
     //*/
     //3. Készíts metódust tömbKiír() néven, amely egy átadott tömböt kilistáz a konzolra!
-    public static void tömbKiir63(){ //Mi az, hogy átadott tömb?!!
-        int[] a63 = {2, 3}; //Mi az, hogy átadott tömb?!!
-        System.out.println(a63); //Mi az, hogy átadott tömb?!!
-    } //Mi az, hogy átadott tömb?!!
-    
+    public static void tömbKiir63(int[] a63) {
+        System.out.println(Arrays.toString(a63));
+    }
+
     //4. Készíts statikus metódust, amely a main()metódus által beolvasott és átadott sztring hosszát, nagybetűs, kisbetűs változatát kiírja a konzolra! Ha a sztring üres, írja ki, hogy a művelet értelmetlen!
     /*
     public static void kiirszoveg64(String szoveg){
@@ -227,32 +231,29 @@ public class HelloWorld {
         return a613;
     }
     //*/
-    
     //14. Készíts metódust, ami egy átadott jelszóról eldönti, hogy valid -e. A bemenő paramétere egy String legyen, visszatérési értéke igaz/hamis logikai érték!
-    
-    public static boolean jelszo614(String jelszo){
+    public static boolean jelszo614(String jelszo) {
         char ch;
-    boolean capitalFlag = false;
-    boolean numberFlag = false;
-    boolean length = false;
-    for(int i=0;i < jelszo.length();i++) {
-        ch = jelszo.charAt(i);
-        if( Character.isDigit(ch)) {
-            numberFlag = true;
+        boolean capitalFlag = false;
+        boolean numberFlag = false;
+        boolean length = false;
+        for (int i = 0; i < jelszo.length(); i++) {
+            ch = jelszo.charAt(i);
+            if (Character.isDigit(ch)) {
+                numberFlag = true;
+            } else if (Character.isUpperCase(ch)) {
+                capitalFlag = true;
+            } else if (8 <= jelszo.length()) {
+                length = true;
+            }
+            if (numberFlag && capitalFlag && length) {
+                return true;
+            }
         }
-        else if (Character.isUpperCase(ch)) {
-            capitalFlag = true;
-        }else if (8 <= jelszo.length()) {
-            length = true;
-        }
-        if(numberFlag && capitalFlag && length)
-            return true;
+        return false;
     }
-    return false;
-    }
-    
-     //15. Készíts metódust, ami két pont x és y koordinátáiból kiszámítja a két pont közötti távolságot
 
+    //15. Készíts metódust, ami két pont x és y koordinátáiból kiszámítja a két pont közötti távolságot
     public static void szakasz615(double a, double b, double c, double d) {
         System.out.println(Math.sqrt(Math.pow((c - a), 2) + Math.pow(d - b, 2)));
     }
@@ -286,7 +287,7 @@ public class HelloWorld {
     //18. Készíts programot, amely bekér a felhasználótól egy egész számot, és eldönti, hogy prímszám-e! A visszatérési érték logikai típusú legyen! 
     public static boolean prim618(int a) {
         boolean prim = true;
-        for (int i = 2; i <= a; i++) {
+        for (int i = 2; i < a; i++) {
             if (a % i == 0) {
                 prim = false;
             }
@@ -303,6 +304,7 @@ public class HelloWorld {
             return b;
         }
     }
+
     //b. 3 egész szám
     public static int minimum619(int a, int b, int c) {
         if (a > b && a > c) {
@@ -313,6 +315,7 @@ public class HelloWorld {
             return c;
         }
     }
+
     //c. 2 valós szám
     public static double minimum619(double a, double b) {
         if (a > b) {
@@ -321,6 +324,7 @@ public class HelloWorld {
             return b;
         }
     }
+
     //d. 3 valós szám
     public static double minimum619(double a, double b, double c) {
         if (a > b && a > c) {
@@ -331,6 +335,7 @@ public class HelloWorld {
             return c;
         }
     }
+
     //e. 1 egész- és 1 valós szám
     public static double minimum619(int a, double b) {
         if (a > b) {
@@ -339,6 +344,7 @@ public class HelloWorld {
             return b;
         }
     }
+
     //f. 2 egész és egy valós szám
     public static double minimum619(int a, int b, double c) {
         if (a > b && a > c) {
@@ -349,8 +355,9 @@ public class HelloWorld {
             return c;
         }
     }
+
     //g. 1 egész- és két valós szám
-        public static double minimum619(int a, double b, double c) {
+    public static double minimum619(int a, double b, double c) {
         if (a > b && a > c) {
             return a;
         } else if (b > a && b > c) {
@@ -360,6 +367,126 @@ public class HelloWorld {
         }
     }
 
+    //20. Készíts túlterhelt statikus metódusokat dupla() néven, amelyek átadott egész szám és valós szám kétszeresét visszaadják! A main() kérje be a számot a felhasználótól, és  az írja ki az eredményt is! 
+    public static void dupla620(int a) {
+        System.out.println(a * 2);
+    }
+
+    public static void dupla620(double a) {
+        System.out.println(a * 2);
+    }
+    
+    //21. Készíts függvényt, ami eldönti, hogy egy megadott év szökőév-e. Szökőév minden néggyel osztható év, kivéve a százzal is oszthatókat. Szökőévek viszont a 400-zal osztható évek.
+    
+    public static void szokoev621(int ev) {
+        if ((ev % 4 == 0 && ev % 100 != 0) || ev % 400 == 0) {
+            System.out.println("Szokőév");
+        } else {
+            System.out.println("Nem szokőév");
+        }
+    }
+    
+    //22. Készíts programot, amely a felhasználó által megadott számhoz legközelebbi prímszámot visszaadja! A legközelebbi prímszám lehet maga a szám is, lehet tőle balra vagy jobbra is! Használd a függvényt, ami eldönti, hogy egy szám prímszám-e!
+    public static void prim622(int a){
+        int n4241 = a;
+        int n4242 = a;
+        boolean prime424;
+        do {
+            prime424 = true;
+            for (int m = 2; m <= a / 2; m++) {
+                if(a % m == 0){
+                    prime424 = false;
+                    a++;
+                    break;
+                }
+            }            
+        } while (!prime424);
+        do {
+            prime424 = true;
+            for (int m = n4242 / 2; m >= 2; m--) {
+                if(n4242 % m == 0){
+                    prime424 = false;
+                    n4242--;
+                    break;
+                }
+            }            
+        } while (!prime424);
+        if(a-n4241 < n4241-n4242){
+            System.out.println(n4241 + " számhoz jobbról legközelebb eső prímszám : " + a);
+        } else if (a-n4241 > n4241-n4242) {
+            System.out.println(n4241 + " számhoz balról legközelebbi eső prímszám : " + n4242);
+        } else {
+            System.out.println(n4241 + "számhoz ugyan olyan közel eső prímszámok : " + n4242 + " és " + a);
+        }
+    }
+    
+    //23. Készíts programot, amely ellenőrzötten bekér a felhasználótól 10 db kétjegyű számot egy tömbbe, majd listázza azokat! A tömb feltöltését a bevitel ellenőrzésével továbbá a listázást egy-egy metódus valósítsa meg!
+    public static void felt623(int[] a){
+        Scanner scan = new Scanner(System.in);
+        int counter623 = 0;
+        do {
+            System.out.println("Kérek egy kétjegyű számot");
+            int b = scan.nextInt();
+            if (10<b && b<99) {
+                a[counter623] = b;
+                counter623++;
+            }else{
+                System.out.println("A szám nem 2 jegyű volt");
+            }
+        } while (counter623 != 10);
+        list623(a);
+    }
+    public static void list623(int[] a){
+        System.out.println(Arrays.toString(a));
+    }
+    
+    //24. Készíts programot, amely ellenőrzötten bekér a felhasználótól N db megadott intervallumba eső számot egy tömbbe, majd listázza azokat! A számok darabszámát és az intervallumot a felhasználótól kérd be. A tömb feltöltését továbbá a listázást egy-egy metódussal valósítsd meg!
+    public static void felt624(int[] a, int b, int c){
+        Random rnd = new Random();
+        for (int i = 0; i < a.length; i++) {
+            a[i] = rnd.nextInt(c-b)+b;
+        }
+        list624(a);
+    }
+    public static void list624(int[] a){
+        System.out.println(Arrays.toString(a));
+    }
+    
+    //25. Készíts metódust, ami egy átadott tömbbéli elemeket listázza, külön a páros, külön a páratlan számokat!
+    public static void paros625(int[] a){
+        for (int i = 0; i < a.length; i++) {
+            if (a[i]%2==0) {
+                System.out.println(a[i]);
+            }
+        }
+    }
+    public static void paratlan625(int[] a){
+        for (int i = 0; i < a.length; i++) {
+            if (a[i]%2==1) {
+                System.out.println(a[i]);
+            }
+        }
+    }
+    
+    //26. Készíts függvényt, ami egy egész számról eldönti, hogy palindrom –e. A számot visszafelé olvasva is ugyanazt a számot kapjuk. Pl. 123321.
+    public static void palindrom626(int a){
+        int b = 0;
+        int c = a;
+        while( a != 0){
+            b = b * 10 + (a%10);
+            a=a/10;
+        }
+        if(c == b){
+            System.out.println("palindrom");
+        }else{
+            System.out.println("nem");
+        }
+    }
+    
+    
+    
+    
+    
     
     
     
@@ -623,12 +750,12 @@ public class HelloWorld {
                     break;
                 }
         }
-        
+
         String szoveg = "Egy kis ilyen";
         int kszam = 0;
         for (int msz = 0; msz < szoveg.length(); msz++) {
             System.out.println(szoveg.charAt(msz));
-            if (szoveg.charAt(msz) != 'k'){
+            if (szoveg.charAt(msz) != 'k') {
                 continue;
             }
             kszam++;
@@ -723,7 +850,7 @@ public class HelloWorld {
         } while (velSzam4 % 2 != 0);
         System.out.println(velSzam4);
         //*/
-        /*
+ /*
         int velszam4 = rnd.nextInt(5) + 1;
         int tipp;
         for (int ic4 = 1; ic4 <= 10; ic4++) {
@@ -744,9 +871,8 @@ public class HelloWorld {
             break;
         }
         //*/
-        
+
         //Negyedik gyakorlati óra
-        
         /*
         int a5gy = 12;
         float b5gy = 13.5f;
@@ -979,7 +1105,7 @@ public class HelloWorld {
             }
         }
         //*/
-        
+
         //12. Kérj be 10 számot, majd minden egyes lépésben írd ki az adott szám négyzetét.
         /*
         for (int m = 1; m <= 10; m++) {
@@ -999,11 +1125,11 @@ public class HelloWorld {
         //*/
         //14. Egy kockával 10-szer dobunk. Írd ki a kockadobás eredményeit számokkal. A dobások értékeit véletlenszám generálással oldd meg.
         for (int m = 1; m <= 10; m++) {
-            int a414 = rnd.nextInt(5)+1;
+            int a414 = rnd.nextInt(5) + 1;
             System.out.println(a414);
-            
+
         }
-        
+
         //15. Kérj be egy számot, majd írd ki az osztóit, osztóinak darabszámát! Az osztók darabszáma alapján döntsd el, hogy a szám prímszám-e!
         /*
         System.out.println("Kérek egy számot");
@@ -1021,7 +1147,6 @@ public class HelloWorld {
             
         }
         //*/
-        
         //16. Kérj be egy számot n, majd írd ki n! értékét.
         /*
         System.out.println("kérek egy számot");
@@ -1043,9 +1168,9 @@ public class HelloWorld {
         }
         //*/
         //18. Állíts elő egy véletlen páros számot a 20 és 80 intervallumban.
-        int a418 = (rnd.nextInt(30)+11)*2;
+        int a418 = (rnd.nextInt(30) + 11) * 2;
         System.out.println(a418);
-        
+
         //19. Készíts számkitalálós programot! A program állítson elő egy véletlenszámot, amit a felhasználónak ki kell találnia. A program kérje be a felhasználó tippjeit. Ha a tipp kisebb, mint a program által előállított, akkor a program írja ki, hogy az én számom nagyobb, ha kisebb, akkor azt, hogy az én számom nagyobb. A program a végén írja ki, hogy hány lépésben sikerült kitalálni a számot!
         /*
         int a419 = rnd.nextInt(10)+1;
@@ -1206,31 +1331,30 @@ public class HelloWorld {
         }
         //*/
         //27. Állíts elő 10 db. páratlan véletlenszámot! A számokat a program egymás mellett vesszővel elválasztva írja ki! Oldd meg a feladatot egy ciklus alkalmazásával is!
-        int a427 = ((rnd.nextInt(10)+1)*2)-1;
+        int a427 = ((rnd.nextInt(10) + 1) * 2) - 1;
         System.out.print(a427);
         for (int m = 1; m <= 9; m++) {
-            a427 = ((rnd.nextInt(10)+1)*2)-1;
-            System.out.print(","+a427);
+            a427 = ((rnd.nextInt(10) + 1) * 2) - 1;
+            System.out.print("," + a427);
         }
         System.out.println("");
-        
-        
+
         //Ötödik óra
         int[] nums5 = {0, 2, 4, 6, 8};
         System.out.println("Elemek: " + Arrays.toString(nums5));
-        
+
         int[] szamok5 = new int[15];
         szamok5[3] = 27; //Ez a negyedik számnak írja, mert 0-val kezdődik.
         szamok5[szamok5.length - 1] = 27;
         System.out.println(szamok5);//Tömb referencia azonosítója
         System.out.println(Arrays.toString(szamok5));
-        
+
         int[] szam5 = new int[10];
         for (int j = 0; j < szam5.length; j++) {
-            szam5[j] = rnd.nextInt(100)+1;    
+            szam5[j] = rnd.nextInt(100) + 1;
         }
         System.out.println(Arrays.toString(szam5));
-        
+
         /*
         double[] homersekletek = new double[5];
         for (int j = 0; j < homersekletek.length; j++) {
@@ -1239,32 +1363,31 @@ public class HelloWorld {
         }
         System.out.println(Arrays.toString(homersekletek));
         //*/
-        
         int[] szamok5a = new int[10];
         for (int j = 0; j < szamok5a.length; j++) {
-            szamok5a[j] = rnd.nextInt(100)+1;
+            szamok5a[j] = rnd.nextInt(100) + 1;
         }
         System.out.println(Arrays.toString(szamok5a));
         for (int j = 0; j < szamok5a.length; j++) {
-            if(szamok5a[j] < 50){
-                System.out.print(szamok5a[j] +", ");
+            if (szamok5a[j] < 50) {
+                System.out.print(szamok5a[j] + ", ");
             }
         }
         System.out.println("");
         for (int szam : szamok5a) { //fore -> for each.
-            if(szam % 2 == 0){
+            if (szam % 2 == 0) {
                 System.out.print(szam + ", ");
+            }
         }
-        }
-        
+
         //Ötödik gyak óra
-         int x = 34;
-        int[] array = {4, 7, 6, 4, 8, 2, 9, 6, 4 , 1, 2, 3, 4, 5, 6, 7, 8};
+        int x = 34;
+        int[] array = {4, 7, 6, 4, 8, 2, 9, 6, 4, 1, 2, 3, 4, 5, 6, 7, 8};
         //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int number;        
-        boolean checked = true; 
+        int number;
+        boolean checked = true;
         int count = 0;
-        int total = array.length-1;
+        int total = array.length - 1;
 
         while (checked) {
             checked = false;
@@ -1283,20 +1406,20 @@ public class HelloWorld {
             System.out.println(array[i]);
         }
         System.out.println(count);
-        
+
         //1. Hozz létre egy 10 elemű egész számokat tartalmazni képes tömböt, majd írd ki az elemeit vesszővel elválasztva egy sorba! Állítsd át a tömb minden elemét 22-re, majd ismét írd ki!
         int[] a51 = new int[10];
         System.out.println(Arrays.toString(a51));// Nem biztos, hogy ezt kérde, de ez is megoldás!!
         Arrays.fill(a51, 22);
         System.out.println(Arrays.toString(a51));
-        
+
         //2. Tölts fel egy tömböt a természetes számok négyzeteivel 1-től 100-ig! Listázd ki a tömb elemeit!
         int[] a52 = new int[100];
         for (int j = 1; j <= a52.length; j++) {
-            a52[j-1] = j*j;
+            a52[j - 1] = j * j;
         }
         System.out.println(Arrays.toString(a52));
-        
+
         //3. Hozz létre egy tömböt, akkora méretűt, amekkorát a felhasználó igényel. Töltsd fel a felhasználótól bekért egész számokkal, majd írd ki a tömböt.
         /*
         System.out.println("Kérem a tömb nagyságát: ");
@@ -1355,7 +1478,7 @@ public class HelloWorld {
         int a55[] = new int[10];
         //a. Töltsd fel az 50..100 közötti intervallumból véletlenszámokkal! 
         for (int j = 0; j < a55.length; j++) {
-            a55[j] = rnd.nextInt(50)+51;
+            a55[j] = rnd.nextInt(50) + 51;
         }
         //b. Írd ki a tömb elemeit vesszővel elválasztva egy sorba!
         for (int j = 0; j < a55.length; j++) {
@@ -1365,36 +1488,36 @@ public class HelloWorld {
         //c. Írd ki a tömböt azon a módon, ahogy az Arrays.toString() metódus teszi. Pl. [54, 23, 45, 7, 8, 46, 81, 9, 10]
         System.out.println(Arrays.toString(a55));
         //d. Írd ki a tömböt visszafelé.
-        for (int j = a55.length-1; j >= 0; j--) {
+        for (int j = a55.length - 1; j >= 0; j--) {
             System.out.print(a55[j] + ", ");
         }
         System.out.println("");
         //e. Írd ki a tömböt a következőképpen: Az [1] és [10], a [2] és [9],.., végül az [5] és a [6] elemek különbségét.
-        for (int j = 0; j < a55.length/2; j++) {
-            System.out.println(a55[j] - a55[9-j]);
+        for (int j = 0; j < a55.length / 2; j++) {
+            System.out.println(a55[j] - a55[9 - j]);
         }
         //f. Írd ki a tömb egymás melletti elemeinek különbségét.
-        for (int j = 0; j < a55.length-1; j++) {
-            System.out.println(a55[j]-a55[j+1]);
+        for (int j = 0; j < a55.length - 1; j++) {
+            System.out.println(a55[j] - a55[j + 1]);
         }
         //g. Írd ki a tömbben található páros/páratlan számokat, az 50-nél kisebb, vagy 70-nél nagyobb számokat.
         for (int j = 0; j < a55.length; j++) {
-            if(a55[j] % 2 == 0){
+            if (a55[j] % 2 == 0) {
                 System.out.println(a55[j] + " páros szám");
-            }else{
+            } else {
                 System.out.println(a55[j] + " páratlan");
             }
-            if(a55[j] > 70){
+            if (a55[j] > 70) {
                 System.out.println(a55[j] + " 70-nél nagyobb szám");
-            }   
+            }
         }
         //6. Hozz létre egy igaz-hamis értékeket tárolni képes 15 elemű tömböt. Töltsd fel véletlen logikai értékekkel. (rnd.nextBoolean() függvény használatával). Listázd ki a tömböt a következőképpen:1. Sikeres vizsga (ha true az érték)2. Sikertelen vizsga (ha false az érték)
         boolean[] a56 = new boolean[15];
         for (int j = 0; j < a56.length; j++) {
             a56[j] = rnd.nextBoolean();
-            if(a56[j] == true){
+            if (a56[j] == true) {
                 System.out.println(a56[j] + " sikeres vizsga");
-            }else{
+            } else {
                 System.out.println(a56[j] + " sikertelen vizsga");
             }
         }
@@ -1434,7 +1557,7 @@ public class HelloWorld {
         int[] a59 = {3, 2, 1};
         int[] b59 = {1, 2, 3};
         System.out.println(Arrays.equals(a59, b59));
-        
+
         //10. Hozz létre egy 10 elemű, egész számokat tartalmazó tömböt, majd töltsd fel véletlenszámokkal az 1 és 20 intervallumban!
         /*
         int[] a510 = new int[10];
@@ -1486,7 +1609,7 @@ public class HelloWorld {
         //12. Egy 5 elemű tömbben az értékek 1 és 5 közötti véletlenszámok. Készítshisztogramot: jeleníts meg annyi csillagot, amekkorák az egyes értékek a tömbben. Pl. [4, 3, 5, 2, 1] **** *** ***** ** *
         int[] a512 = new int[5];
         for (int j = 0; j < a512.length; j++) {
-            a512[j] = rnd.nextInt(4)+1;
+            a512[j] = rnd.nextInt(4) + 1;
             for (int m = 1; m <= a512[j]; m++) {
                 System.out.print("*");
             }
@@ -1495,7 +1618,7 @@ public class HelloWorld {
         //13. Véletlenszerűen dobjunk 100-szor egy szabályos kockával, majd írd ki, hogy hányszor dobtunk 1-est, 2-est stb.! A kockadobásokat egy 6 elemű tömbben számláld!
         int[] a513 = new int[100]; //valószínűleg nem így!!
         for (int j = 0; j < a513.length; j++) {
-            a513[j] = rnd.nextInt(5)+1;
+            a513[j] = rnd.nextInt(5) + 1;
         }
         int co5131 = 0;
         int co5132 = 0;
@@ -1504,38 +1627,38 @@ public class HelloWorld {
         int co5135 = 0;
         int co5136 = 0;
         for (int j = 0; j < a513.length; j++) {
-            if(a513[j] == 1){
+            if (a513[j] == 1) {
                 co5131++;
-            }else if(a513[j] == 2){
+            } else if (a513[j] == 2) {
                 co5132++;
-            }else if(a513[j] == 3){
+            } else if (a513[j] == 3) {
                 co5133++;
-            }else if(a513[j] == 4){
+            } else if (a513[j] == 4) {
                 co5134++;
-            }else if(a513[j] == 5){
+            } else if (a513[j] == 5) {
                 co5135++;
-            }else{
+            } else {
                 co5136++;
             }
         }
-        int[] b513 ={co5131, co5132, co5133, co5134, co5135, co5136};
+        int[] b513 = {co5131, co5132, co5133, co5134, co5135, co5136};
         System.out.println(Arrays.toString(b513));
-        
+
         //14. Hozz létre egy tömböt, amit létrehozáskor valós számokkal töltesz fel. Döntsd el, hogy a tömb növekvően rendezett-e. A program írja ki, hogy a tömb rendezett, vagy nem rendezett.
-        double[] a514 = {0.1, 1.1, 2.3}; 
+        double[] a514 = {0.1, 1.1, 2.3};
         boolean boo514 = false;
         int co514 = 0;
-        for (int j = 0; j < a514.length-1; j++) {
-            if(a514[j] < a514[j+1]){
+        for (int j = 0; j < a514.length - 1; j++) {
+            if (a514[j] < a514[j + 1]) {
                 co514++;
-            }  
+            }
         }
-        if(co514 == 2){
+        if (co514 == 2) {
             boo514 = true;
         }
-        if(boo514){
+        if (boo514) {
             System.out.println("A tömb rendezett");
-        }else{
+        } else {
             System.out.println("A tömb nem rendezett");
         }
         //15. Hozz létre két 10 elemű egész számokat tartalmazni képes tömböt A és B tömb. Az egyiket A töltsd fel 0-9- intervallumban véletlenszámokkal, a másikat B 1-100 közötti véletlenszámokkal. Írd ki a B tömb elemeit az A tömbben létrehozott számok sorrendjében! Tehát, ha az A-ban pl. 2,5,8.. van, akkor a B tömb 2., 5., és 8… elemeit írd ki egymás után
@@ -1545,23 +1668,23 @@ public class HelloWorld {
             a515[j] = rnd.nextInt(10);
         }
         for (int j = 0; j < b515.length; j++) {
-            b515[j] = rnd.nextInt(99)+1;
+            b515[j] = rnd.nextInt(99) + 1;
         }
         for (int j = 0; j < b515.length; j++) {
             System.out.println(b515[a515[j]]);
         }
-        
+
         //16. Tölts fel egy 20 elemű tömböt véletlenszámokkal a 10 és 30 intervallumban.
         int[] a516 = new int[20];
         for (int j = 0; j < a516.length; j++) {
-            a516[j] = rnd.nextInt(20)+11;
+            a516[j] = rnd.nextInt(20) + 11;
         }
         //e. Határozd meg, hogy van –e olyan számpár a tömbben, ami a 42-őt adja eredményül. Ha igen, írd ki ezt a számpárt, majd állítsd le a programot.Megengedett, hogy egy tömbbéli elem adja ki a számot. Pl. 21.
         int b516;
         for (int j = 0; j < a516.length; j++) {
             for (int m = 0; m < a516.length; m++) {
                 b516 = a516[j] + a516[m];
-                if(b516 == 42){
+                if (b516 == 42) {
                     System.out.println("Az " + j + ". és a " + m + ".");
                 }
             }
@@ -1596,10 +1719,10 @@ public class HelloWorld {
         //19. Cseréld fel egy tömb egymás mellett lévő elemeit a következőképpen. 1-2, 3-4, 4-5…9-10 elemeket.
         int[] a519 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         int b519;
-        for (int j = 0; j < a519.length; j+=2) {
+        for (int j = 0; j < a519.length; j += 2) {
             b519 = a519[j];
-            a519[j] = a519[j+1];
-            a519[j+1] = b519;
+            a519[j] = a519[j + 1];
+            a519[j + 1] = b519;
         }
         System.out.println(Arrays.toString(a519));
         //20. Tölts fel egy tömböt 5 véletlenszámmal. Cseréld fel két véletlenszerűen kiválasztott elemét! Ezt addig ismételd, ameddig a tömb rendezett nem lesz.
@@ -1616,43 +1739,42 @@ public class HelloWorld {
         do {
             co520 = 0;
             rn520 = rnd.nextInt(5);
-            ra520 =rnd.nextInt(5);
+            ra520 = rnd.nextInt(5);
             b520 = a520[rn520];
             a520[rn520] = a520[ra520];
             a520[ra520] = b520;
-            for (int j = 0; j < a520.length-1; j++) {
-                if(a520[j]<a520[j+1] || a520[j]==a520[j+1]){
+            for (int j = 0; j < a520.length - 1; j++) {
+                if (a520[j] < a520[j + 1] || a520[j] == a520[j + 1]) {
                     co520++;
                 }
-                
+
             }
-            if(co520 == 4){
+            if (co520 == 4) {
                 boo520 = false;
             }
         } while (boo520);
         System.out.println(Arrays.toString(a520));
-        
-        
+
         //Hatodik óra
         kiirValamit(); //ctrl+space=Előhívás //Debugolásnál a step over (F8) itt a mainben megy a következőre, míg a step into (F7) bele is megy a kiirVaalmit-be
         kiirValamit();
-        
+
         kiirSzoveg("*", 10);
         kiirSzoveg("Metodus", 15, 2);
         kiirSzoveg("Java", 4, 3);
-        
+
         int x6 = szamol(5, 12);
         System.out.println(x6);
         int y6 = x6 + szamol(8, 13);
         System.out.println(y6);
-        
+
         double m6 = meredekség(-1, 0, 2, 2);
         System.out.println("Meredekség " + m6);
-        
+
         System.out.println(primszamE(1));
         System.out.println(primszamE(23));
         System.out.println(primszamE(24));
-        
+
         //1. Készíts programot, amely bekér a felhasználótól egy egész számot, és kiírja annak kétszeresét! A számot a program main() metódusában kérd be, a számítást a dupla() nevű metódus végezze!
         /*
         System.out.println("Kérek egy számot");
@@ -1664,9 +1786,8 @@ public class HelloWorld {
         kiir62(scan.nextInt(), scan.nextInt());
         //*/
         //3. Készíts metódust tömbKiír() néven, amely egy átadott tömböt kilistáz a konzolra!
-        int[] a63 = {2, 3}; //Mi az, hogy átadott tömb?!!
-        tömbKiir63(); //Mi az, hogy átadott tömb?!!
-        
+        int[] a63 = {2, 3};
+        tömbKiir63(a63);
         //4. Készíts statikus metódust, amely a main()metódus által beolvasott és átadott sztring hosszát, nagybetűs, kisbetűs változatát kiírja a konzolra! Ha a sztring üres, írja ki, hogy a művelet értelmetlen!
         /*
         System.out.println("Kérek egy szöveget"); //Rossz!!
@@ -1748,15 +1869,15 @@ public class HelloWorld {
         System.out.println(faktorialis613(scan.nextInt()));
         //*/
         //14. Készíts metódust, ami egy átadott jelszóról eldönti, hogy valid -e. A bemenő paramétere egy String legyen, visszatérési értéke igaz/hamis logikai érték!
-        
+
         System.out.println("Kérek egy jelszót");
         if (jelszo614(scan.next())) {
             System.out.println("Jelszó elfogadva");
         } else {
             System.out.println("A jelszónak kell tartalmaznia 8 karatkert,  nagybetűt és számot");
         }
-        
-         //15. Készíts metódust, ami két pont x és y koordinátáiból kiszámítja a két pont közötti távolságot
+
+        //15. Készíts metódust, ami két pont x és y koordinátáiból kiszámítja a két pont közötti távolságot
         System.out.println("Adja meg az első pont x y koordinátáit");
         double a615 = scan.nextDouble();
         double b615 = scan.nextDouble();
@@ -1808,8 +1929,42 @@ public class HelloWorld {
         //g. 1 egész- és két valós szám
         System.out.println("Kérek 1 egész és 2 valós számot");
         System.out.println(minimum619(scan.nextInt(), scan.nextDouble(), scan.nextDouble()));
+
+        //20. Készíts túlterhelt statikus metódusokat dupla() néven, amelyek átadott egész szám és valós szám kétszeresét visszaadják! A main() kérje be a számot a felhasználótól, és  az írja ki az eredményt is! 
+        System.out.println("Kérek egy egész vagy egy valós számot");
+        dupla620(scan.nextDouble());
+
+        //21. Készíts függvényt, ami eldönti, hogy egy megadott év szökőév-e. Szökőév minden néggyel osztható év, kivéve a százzal is oszthatókat. Szökőévek viszont a 400-zal osztható évek.
+        System.out.println("Adj meg egy évszámot");
+        szokoev621(scan.nextInt());
         
+        //22. Készíts programot, amely a felhasználó által megadott számhoz legközelebbi prímszámot visszaadja! A legközelebbi prímszám lehet maga a szám is, lehet tőle balra vagy jobbra is! Használd a függvényt, ami eldönti, hogy egy szám prímszám-e!
+        System.out.println("Kérek egy egész számot");
+        prim622(scan.nextInt());
         
+        //23. Készíts programot, amely ellenőrzötten bekér a felhasználótól 10 db kétjegyű számot egy tömbbe, majd listázza azokat! A tömb feltöltését a bevitel ellenőrzésével továbbá a listázást egy-egy metódus valósítsa meg!
+        int[] a623 = new int[10];
+        felt623(a623);
+        
+        //24. Készíts programot, amely ellenőrzötten bekér a felhasználótól N db megadott intervallumba eső számot egy tömbbe, majd listázza azokat! A számok darabszámát és az intervallumot a felhasználótól kérd be. A tömb feltöltését továbbá a listázást egy-egy metódussal valósítsd meg!
+        System.out.println("Kérem a tömb nagyságát");
+        int[] a624 = new int[scan.nextInt()];
+        System.out.println("Kérem egy intervallumot");
+        int b624 = scan.nextInt();
+        int c624 = scan.nextInt();
+        felt624(a624, b624, c624);
+        
+        //25. Készíts metódust, ami egy átadott tömbbéli elemeket listázza, külön a páros, külön a páratlan számokat! 
+        int[] a625 = new int[10];
+        for (int i = 0; i < a625.length; i++) {
+            a625[i]=rnd.nextInt(6)+1;
+        }
+        paros625(a625);
+        paratlan625(a625);
+        
+        //26. Készíts függvényt, ami egy egész számról eldönti, hogy palindrom –e. A számot visszafelé olvasva is ugyanazt a számot kapjuk. Pl. 123321.
+        System.out.println("Kérek egy egész számot");
+        palindrom626(scan.nextInt());
         
     }
 }
